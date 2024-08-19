@@ -12,6 +12,7 @@ var corsOptions = {
   credentials: true,
 };
 
+// app.use(express.static('../client/dist'))
 app.use(cors(corsOptions));
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
