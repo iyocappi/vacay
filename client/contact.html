@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./src/assets/css/main.css" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "oniw4UdjDUhG3VsBi",
+        });
+      })();
+    </script>
+    <script src="./src/assets/js/email.js"></script>
+    <noscript
+      ><link rel="stylesheet" href="./src/assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <img src="/main-logo.png" alt="" class="logo" width="65" height="65" />
+        <nav id="nav-container">
+          <a href="#menu" id="mobile-anchor">Menu</a>
+          <a href="./index.html" id="nav-anchor">Home</a>
+          <a href="./about-us.html" id="nav-anchor">About </a>
+          <a href="./apply-for-leave.html" id="nav-anchor">Apply For Leave</a>
+          <a href="./contact.html" id="nav-anchor">Contact</a>
+          <a href="./care-package.html" id="nav-anchor">Care Package</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="./index.html" id="nav-anchor">Home</a></li>
+          <li><a href="./about-us.html" id="nav-anchor">About </a></li>
+          <li>
+            <a href="./apply-for-leave.html" id="nav-anchor">Apply For Leave</a>
+          </li>
+          <li><a href="./contact.html" id="nav-anchor">Contact</a></li>
+          <li>
+            <a href="./care-package.html" id="nav-anchor">Care Package</a>
+          </li>
+        </ul>
+        <ul class="actions stacked">
+          <!-- <li><a href="#" class="button primary fit">Get Started</a></li> -->
+          <!-- <li><a href="#" class="button fit">Log In</a></li> -->
+        </ul>
+      </nav>
+
+      <!-- Banner -->
+      <section id="banner" class="major">
+        <div class="inner">
+          <h1 class="banner-title">Contact</h1>
+          <ul class="actions">
+            <li>
+              <a href="#one" class="button next scrolly">Apply For Leave</a>
+            </li>
+          </ul>
+        </div>
+        <!-- </div> -->
+      </section>
+
+      <!-- Main -->
+      <div id="about-main">
+        <section class="about-info">
+          <header class="major">
+            <h1 class="about-title-main">Contact Us</h1>
+          </header>
+
+          <div class="contact-icons-container">
+            <div class="contact-icons-div">
+              <img src="./src/assets/email.svg" width="85" height="85" />
+              <h3>EMAIL</h3>
+              <h5>Usmilitaryleaveagency8@gmail.com</h5>
+            </div>
+            <div class="contact-icons-div">
+              <img src="./src/assets/clock.svg" width="85" height="85" />
+              <h3>OPERATING HOURS</h3>
+              <h5>
+                <ul>
+                  <li>Mon - Fri: 9:00 am to 10:00pm (EST)</li>
+                  <li>Sat & Sun: Noon to 8:00pm (EST)</li>
+                </ul>
+              </h5>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-info">
+          <!-- Contact -->
+          <section id="contact">
+            <header class="major">
+              <h1 class="about-title-main">Get In Touch</h1>
+            </header>
+            <div class="inner">
+              <section>
+                <form id="contactForm" onsubmit="sendContact(event)">
+                  <div class="fields">
+                    <div class="field">
+                      <label for="subject">Subject</label>
+                      <input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        placeholder="Application For Health Leave"
+                        required
+                      />
+                    </div>
+                    <div class="field half">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" id="name" required />
+                    </div>
+                    <div class="field half">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" id="email" required />
+                    </div>
+                    <div class="field">
+                      <label for="message">Message</label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        rows="6"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <ul class="actions">
+                    <li>
+                      <button type="submit" class="primary">Send</button>
+                    </li>
+                    <li><input type="reset" value="Clear" /></li>
+                  </ul>
+                </form>
+              </section>
+              <section class="split">
+                <section>
+                  <div class="contact-method">
+                    <span class="icon solid alt fa-envelope"></span>
+                    <h3>Email</h3>
+                    <a href="mailto:Usmilitaryleaveagency8@gmail.com"
+                      >Usmilitaryleaveagency8@gmail.com</a
+                    >
+                  </div>
+                </section>
+                <!-- <section>
+                  <div class="contact-method">
+                    <span class="icon solid alt fa-phone"></span>
+                    <h3>Phone</h3>
+                    <span>(000) 000-0000 x12387</span>
+                  </div>
+                </section> -->
+                <section>
+                  <div class="contact-method">
+                    <span class="icon solid alt fa-home"></span>
+                    <h3>Address</h3>
+                    <span>1122 Potter Rd, Antelope, CA 32802</span>
+                  </div>
+                </section>
+              </section>
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner-footer">
+          <div>Usmilitaryleaveagency8@gmail.com</div>
+          <div>
+            <img
+              src="/main-logo.png"
+              alt=""
+              class="logo"
+              width="95"
+              height="95"
+            />
+          </div>
+          <div>1122 Potter Rd, Antelope, CA 32802</div>
+        </div>
+        <div class="inner-footer">
+          <ul class="copyright">
+            <li>&copy; <span id="current-year"></span></li>
+            <li>U.S Army</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./src/assets/js/jquery.min.js"></script>
+    <script src="./src/assets/js/jquery.scrolly.min.js"></script>
+    <script src="./src/assets/js/jquery.scrollex.min.js"></script>
+    <script src="./src/assets/js/browser.min.js"></script>
+    <script src="./src/assets/js/breakpoints.min.js"></script>
+    <script src="./src/assets/js/util.js"></script>
+    <script src="./src/assets/js/main.js"></script>
+    <script src="./src/assets/js/carousel.js" type="module"></script>
+    <script src="./src/assets/js/nav.js"></script>
+    <script>
+      const currentYear = new Date().getFullYear();
+
+      document.getElementById("current-year").textContent = currentYear;
+    </script>
+  </body>
+</html>

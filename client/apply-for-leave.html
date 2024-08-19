@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About Us</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./src/assets/css/main.css" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "oniw4UdjDUhG3VsBi",
+        });
+      })();
+    </script>
+    <script src="./src/assets/js/email.js"></script>
+    <noscript
+      ><link rel="stylesheet" href="./src/assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <img src="/main-logo.png" alt="" class="logo" width="65" height="65" />
+        <nav id="nav-container">
+          <a href="#menu" id="mobile-anchor">Menu</a>
+          <a href="./index.html" id="nav-anchor">Home</a>
+          <a href="./about-us.html" id="nav-anchor">About </a>
+          <a href="./apply-for-leave.html" id="nav-anchor">Apply For Leave</a>
+          <a href="./contact.html" id="nav-anchor">Contact</a>
+          <a href="./care-package.html" id="nav-anchor">Care Package</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="./index.html" id="nav-anchor">Home</a></li>
+          <li><a href="./about-us.html" id="nav-anchor">About </a></li>
+          <li>
+            <a href="./apply-for-leave.html" id="nav-anchor">Apply For Leave</a>
+          </li>
+          <li><a href="./contact.html" id="nav-anchor">Contact</a></li>
+          <li>
+            <a href="./care-package.html" id="nav-anchor">Care Package</a>
+          </li>
+        </ul>
+        <ul class="actions stacked">
+          <!-- <li><a href="#" class="button primary fit">Get Started</a></li> -->
+          <!-- <li><a href="#" class="button fit">Log In</a></li> -->
+        </ul>
+      </nav>
+
+      <!-- Banner -->
+      <section id="banner" class="major">
+        <div class="inner">
+          <h1 class="banner-title">APPLY FOR LEAVE</h1>
+          <ul class="actions">
+            <li>
+              <a href="#one" class="button next scrolly">Apply For Leave</a>
+            </li>
+          </ul>
+        </div>
+        <!-- </div> -->
+      </section>
+
+      <!-- Main -->
+      <div id="about-main">
+        <section class="about-info">
+          <p class="major-subtitle">ABOUT</p>
+
+          <article>
+            <header class="major">
+              <h1 class="about-title-main">Application Reasons</h1>
+            </header>
+            The U.S. Army Board of the welfare department has made the new rules
+            for expatriates in war zones, that request work leave to be applied
+            by their loved ones/friends/relatives for the reasons below.
+          </article>
+
+          <article>
+            <header class="major">
+              <h3 class="about-title">HEALTH LEAVE</h3>
+            </header>
+            The health leave is the leave for personnels under the U.S Army who
+            are not in good health. Leave benefits mainly involves proper
+            healthcare and rest based on their potential prognosis.
+          </article>
+
+          <article>
+            <header class="major">
+              <h3 class="about-title">CONJUGAL VACATION</h3>
+            </header>
+            This leave is granted based on marital grounds, as well as other
+            strong conjugal reasons.
+          </article>
+
+          <article>
+            <header class="major">
+              <h3 class="about-title">ANNUAL LEAVE</h3>
+            </header>
+            This is for active duty soldiers who fall under the qualified
+            criteria.
+          </article>
+          <br />
+
+          <article>
+            <b>NB:</b>
+            You must be informed that emergency leaves are not free of charge
+            unless there is a life-threatening emergency. You are thereby
+            expected to go through the leave categories to make a proper choice.
+            <br />
+            A leave duration is made available for you to choose and after you
+            choose and send a payment according to the choice made for your
+            partner depending on your capability and the expected time that you
+            will want him to spend with you. The reasons for payment for
+            emergency leave Application are to assist the USA military authority
+            in replacement expenses and supporting troops coming to take over
+            duties from anyone going on emergency leave and must be considered
+            worthy and a way of ensuring that our troops are protected and
+            allowed to judiciously make use of their times for reasons they have
+            applied and paid for. This must be well understood by any
+            applicant/fiancée and instructions made here must be duly followed
+            with the payment of the amount fixed on each emergency vacation
+            choice made in accordance with the rules and all guidelines clearly
+            stated on this memo to avoid mistake or termination of approval.
+            NOTE: For payment of any choice of leave duration, applicants are to
+            make complete payment for the leave duration option or choice made
+            by applicants. You are hereby expected to tell us which Leave
+            category you choose A-D so that the appropriate payment details will
+            be sent to you with instructions on his date of arrival. Kindly tell
+            us the duration you are applying for your loved one/friend/relative
+            at the war zone so that we can forward you the necessary information
+            for the leave processing.
+          </article>
+        </section>
+
+        <section class="about-info">
+          <!-- Contact -->
+          <section id="contact">
+            <header class="care-contact">
+              <h3 class="about-title">READY TO APPLY FOR A SERVICE MEMBER?</h3>
+              Fill the form below
+            </header>
+            <div class="inner">
+              <section>
+                <form id="contactForm" onsubmit="sendMail(event)">
+                  <div class="fields">
+                    <div class="field">
+                      <label for="subject">Subject</label>
+                      <input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        placeholder="Application For Health Leave"
+                        required
+                      />
+                    </div>
+                    <div class="field half">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" id="name" required />
+                    </div>
+                    <div class="field half">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" id="email" required />
+                    </div>
+                    <div class="field half">
+                      <label for="field">Soldier&apos;s Field</label>
+                      <input type="text" name="field" id="field" />
+                    </div>
+                    <div class="field half">
+                      <label for="start">Proposed Start Date</label>
+                      <input type="date" name="start" id="start" />
+                    </div>
+                    <div class="field">
+                      <label for="message">Message</label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        rows="6"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <ul class="actions">
+                    <li>
+                      <button type="submit" class="primary">Send</button>
+                    </li>
+                    <li><input type="reset" value="Clear" /></li>
+                  </ul>
+                </form>
+              </section>
+              <section class="split">
+                <section>
+                  <div class="contact-method">
+                    <span class="icon solid alt fa-envelope"></span>
+                    <h3>Email</h3>
+                    <a href="mailto:Usmilitaryleaveagency8@gmail.com"
+                      >Usmilitaryleaveagency8@gmail.com</a
+                    >
+                  </div>
+                </section>
+                <!-- <section>
+                  <div class="contact-method">
+                    <span class="icon solid alt fa-phone"></span>
+                    <h3>Phone</h3>
+                    <span>(000) 000-0000 x12387</span>
+                  </div>
+                </section> -->
+                <section>
+                  <div class="contact-method">
+                    <span class="icon solid alt fa-home"></span>
+                    <h3>Address</h3>
+                    <span>1122 Potter Rd, Antelope, CA 32802</span>
+                  </div>
+                </section>
+              </section>
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner-footer">
+          <div>Usmilitaryleaveagency8@gmail.com</div>
+          <div>
+            <img
+              src="/main-logo.png"
+              alt=""
+              class="logo"
+              width="95"
+              height="95"
+            />
+          </div>
+          <div>1122 Potter Rd, Antelope, CA 32802</div>
+        </div>
+        <div class="inner-footer">
+          <ul class="copyright">
+            <li>&copy; <span id="current-year"></span></li>
+            <li>U.S Army</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./src/assets/js/jquery.min.js"></script>
+    <script src="./src/assets/js/jquery.scrolly.min.js"></script>
+    <script src="./src/assets/js/jquery.scrollex.min.js"></script>
+    <script src="./src/assets/js/browser.min.js"></script>
+    <script src="./src/assets/js/breakpoints.min.js"></script>
+    <script src="./src/assets/js/util.js"></script>
+    <script src="./src/assets/js/main.js"></script>
+    <script src="./src/assets/js/carousel.js" type="module"></script>
+    <script src="./src/assets/js/nav.js"></script>
+
+    <script>
+      const currentYear = new Date().getFullYear();
+
+      document.getElementById("current-year").textContent = currentYear;
+    </script>
+  </body>
+</html>
