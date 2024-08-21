@@ -4212,7 +4212,7 @@ body.is-menu-visible #menu .inner {
 
 /* Individual result item */
 .result-item {
-  background-color: #f9f9f9;
+  background-color: ##e1d798;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
@@ -4244,7 +4244,7 @@ body.is-menu-visible #menu .inner {
 }
 .result-text-about {
   font-size: 16px;
-  color: #333 !important;
+  color: #333333 !important;
   margin: 0;
   line-height: 1.5;
 }
