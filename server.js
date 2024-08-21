@@ -12,7 +12,6 @@ var corsOptions = {
   credentials: true,
 };
 
-// app.use(express.static('../client/dist'))
 app.use(cors(corsOptions));
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -26,9 +25,21 @@ app.use((req, res, next) => {
 
 // Sample data
 const data = [
-  { id: 1, name: "John Doe", job: "Developer" },
-  { id: 2, name: "Jane Smith", job: "Designer" },
-  { id: 3, name: "Mike Johnson", job: "Manager" },
+  {
+    id: 1,
+    name: "Cory Moore",
+    job: "Developer",
+    mos: "11B-0934-INF",
+    imageUrl: "https://imgur.com/a/ZBijWja",
+  },
+  {
+    id: 2,
+    name: "Timothy Anderson",
+    job: "Designer",
+    mos: "1N371-0934-MED",
+    imageUrl: "https://imgur.com/zombJLM",
+  },
+  // { id: 3, name: "Mike Johnson", job: "Manager" },
 ];
 
 // Serve static files from the 'client' directory
@@ -39,12 +50,37 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "search.html"));
 });
 
+// // Handle search requests
+// app.get("/search", cors(corsOptions), (req, res) => {
+//   const query = req.query.name.toLowerCase()
+//   if (!query || query === "") {
+//     return res.status(404).json({ message: "Nothing found" });
+//   }
+//   const filteredData = data.filter((item) =>
+//     item.name.toLowerCase().includes(query)
+//   );
+//   res.json(filteredData);
+// });
+
 // Handle search requests
 app.get("/search", cors(corsOptions), (req, res) => {
-  const query = req.query.name ? req.query.name.toLowerCase() : "";
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(query)
-  );
+  const nameQuery = req.query.name ? req.query.name.toLowerCase() : null;
+  const mosQuery = req.query.mos ? req.query.mos : null;
+
+  if (!nameQuery && !mosQuery) {
+    return res.status(404).json({ message: "Nothing found" });
+  }
+
+  const filteredData = data.filter((item) => {
+    const nameMatches = nameQuery
+      ? item.name.toLowerCase().includes(nameQuery)
+      : true;
+    const mosMatches = mosQuery
+      ? item.mos.toLowerCase().includes(mosQuery)
+      : true;
+    return nameMatches && mosMatches;
+  });
+
   res.json(filteredData);
 });
 

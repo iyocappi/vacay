@@ -32,6 +32,19 @@
           <a href="./apply-for-leave.html" id="nav-anchor">Apply For Leave</a>
           <a href="./contact.html" id="nav-anchor">Contact</a>
           <a href="./care-package.html" id="nav-anchor">Care Package</a>
+          <div class="dropdown">
+            <div class="dropbtn" onclick="toggleDropdown()">
+              <img src="./assets/threedots.svg" width="20" height="20" />
+            </div>
+            <div class="dropdown-content" id="drop-content">
+              <a href="./search.html">Search</a>
+              <a href="#">Communication Permit</a>
+              <a href="#">Compensation Fund</a>
+              <a href="#">Contract Termination</a>
+              <a href="#">Deployment</a>
+              <a href="./housing-program.html">Housing Program</a>
+            </div>
+          </div>
         </nav>
       </header>
 
@@ -69,6 +82,9 @@
 
       <!-- Main -->
       <div id="about-main" class="search-container">
+        <h3 style="text-align: center">
+          Search Our database Using Soldier&apos;s MOS Code or Name
+        </h3>
         <input
           type="text"
           id="searchBox"
@@ -77,7 +93,12 @@
         />
         <button id="searchButton">Search</button>
 
-        <div id="results">Hello</div>
+        <div id="results-container">
+          <div class="result-item">
+            <img src="#" alt="" class="result-image" />
+            <p class="result-text"></p>
+          </div>
+        </div>
       </div>
 
       <!-- Footer -->

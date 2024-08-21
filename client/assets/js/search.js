@@ -7,16 +7,41 @@ async function handleSearch() {
 
   console.log("filteredData", filteredData);
 
-  const container = document.getElementById("results");
+  const container = document.getElementById("results-container");
   container.innerHTML = ""; // Clear previous results
 
   if (filteredData.length === 0) {
     container.textContent = "No results found.";
   } else {
-    filteredData.forEach((item) => {
-      const div = document.createElement("div");
-      div.textContent = `${item.name} - ${item.job}`;
-      container.appendChild(div);
+    filteredData?.forEach((item) => {
+      // const div = document.createElement("div");
+      // div.classList.add("result-item"); // Optional: Add a class for styling
+
+      // // Create an image element
+      // const img = document.createElement("img");
+      // img.src = item.imageUrl; // Assuming your API provides an imageUrl
+      // img.alt = `${item.name}`;
+      // img.classList.add("result-image"); // Optional: Add a class for styling
+
+      // // Create a text element
+      // const text = document.createElement("p");
+      // text.textContent = `${item.name} - ${item.job}`;
+      // text.classList.add("result-text"); // Optional: Add a class for styling
+
+      // // Append the image and text to the div
+      // div.appendChild(img);
+      // div.appendChild(text);
+
+      // // Append the div to the container
+      // container.appendChild(div);
+
+      const resultImage = document.getElementsByClassName("result-image");
+      const resultText = document.getElementsByClassName("result-text");
+
+      resultImage.src = item.imageUrl;
+      resultImage.alt = item.name;
+
+      resultText.textContent = `${item.name} - ${item.job}`;
     });
   }
 }
