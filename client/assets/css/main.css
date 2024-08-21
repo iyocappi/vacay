@@ -3849,7 +3849,7 @@ body.is-preload #banner > .inner {
 
 #footer .copyright li {
   border-left: solid 1px rgba(212, 212, 255, 0.1);
-  color: rgba(244, 244, 255, 0.2);
+  color: #e1d798;
   display: inline-block;
   line-height: 1;
   margin-left: 1em;
@@ -4253,3 +4253,5 @@ body.is-menu-visible #menu .inner {
 .result-item:hover {
   transform: translateY(-5px);
 }
+
+/* footer year and copyright */
