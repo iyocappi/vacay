@@ -30,15 +30,20 @@ app.use("/images", express.static(path.join(__dirname, "client/images")));
 const data = [
   {
     id: 1,
-    name: "Cory Moore",
-    job: "Developer",
+    name: "COL. Cory Moore",
+    job: "I.T",
+    about:
+      "Cory Moore was born to Mr. & Mrs. Franklin Moore in 1970 in Detriot, Michigan. He schooled at the University of Detroit graduated with class of 1994.",
+
     mos: "11B-0934-INF",
     imageUrl: "/images/cory-moore.jpg",
   },
   {
     id: 2,
     name: "Timothy Anderson",
-    job: "Designer",
+    job: "Infantry",
+    about:
+      "Timothy Anderson was born in Jacksonville, FL. in 1987. He has been an infantry man in the U.S Army since 2011",
     mos: "1N371-0934-MED",
     imageUrl: "/images/timothy-anderson.jpg",
   },

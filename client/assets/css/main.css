@@ -4229,11 +4229,19 @@ body.is-menu-visible #menu .inner {
   height: auto;
   border-radius: 6px;
   margin-bottom: 10px;
-  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  object-fit: cover;
+  text-align: center;
 }
 
 /* Text styling */
-.result-text {
+.result-text-name {
+  /* font-size: 16px; */
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+.result-text-about {
   font-size: 16px;
   color: #333;
   margin: 0;

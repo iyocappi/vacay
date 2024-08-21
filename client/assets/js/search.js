@@ -22,13 +22,18 @@ async function handleSearch() {
       img.classList.add("result-image"); // Optional: Add a class for styling
 
       // Create a text element
-      const text = document.createElement("p");
-      text.textContent = `${item.name} - ${item.job}`;
-      text.classList.add("result-text"); // Optional: Add a class for styling
+      const textName = document.createElement("h2");
+      textName.textContent = `${item.name}`;
+      textName.classList.add("result-text-name"); // Optional: Add a class for styling
+
+      textAbout = document.createElement("p");
+      textAbout.textContent = `${item.about}`;
+      textName.classList.add("result-text-about");
 
       // Append the image and text to the div
       div.appendChild(img);
-      div.appendChild(text);
+      div.appendChild(textName);
+      div.appendChild(textAbout);
 
       // Append the div to the container
       container.appendChild(div);
