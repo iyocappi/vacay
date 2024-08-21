@@ -4244,7 +4244,7 @@ body.is-menu-visible #menu .inner {
 }
 .result-text-about {
   font-size: 16px;
-  color: #333;
+  color: #333 !important;
   margin: 0;
   line-height: 1.5;
 }
