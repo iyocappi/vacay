@@ -23,6 +23,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serve the images from the 'client/assets/images' folder
+app.use("/images", express.static(path.join(__dirname, "client/images")));
+
 // Sample data
 const data = [
   {
@@ -30,14 +33,14 @@ const data = [
     name: "Cory Moore",
     job: "Developer",
     mos: "11B-0934-INF",
-    imageUrl: "https://imgur.com/a/ZBijWja",
+    imageUrl: "/images/cory-moore.jpg",
   },
   {
     id: 2,
     name: "Timothy Anderson",
     job: "Designer",
     mos: "1N371-0934-MED",
-    imageUrl: "https://imgur.com/zombJLM",
+    imageUrl: "/images/timothy-anderson.jpg",
   },
   // { id: 3, name: "Mike Johnson", job: "Manager" },
 ];
