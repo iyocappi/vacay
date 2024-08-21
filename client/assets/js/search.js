@@ -26,7 +26,7 @@ async function handleSearch() {
       textName.textContent = `${item.name}`;
       textName.classList.add("result-text-name"); // Optional: Add a class for styling
 
-      textAbout = document.createElement("p");
+      const textAbout = document.createElement("p");
       textAbout.textContent = `${item.about}`;
       textName.classList.add("result-text-about");
 

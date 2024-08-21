@@ -4221,6 +4221,7 @@ body.is-menu-visible #menu .inner {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.2s ease-in-out;
+  margin: auto;
 }
 
 /* Image styling */
