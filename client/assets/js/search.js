@@ -32,14 +32,6 @@ async function handleSearch() {
 
       // Append the div to the container
       container.appendChild(div);
-
-      // const resultImage = document.getElementsByClassName("result-image");
-      // const resultText = document.getElementsByClassName("result-text");
-
-      // resultImage.src = item.imageUrl;
-      // resultImage.alt = item.name;
-
-      // resultText.textContent = `${item.name} - ${item.job}`;
     });
   }
 }

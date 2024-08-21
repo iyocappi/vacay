@@ -68,7 +68,7 @@ app.get("/", (req, res) => {
 // Handle search requests
 app.get("/search", cors(corsOptions), (req, res) => {
   const nameQuery = req.query.name ? req.query.name.toLowerCase() : null;
-  const mosQuery = req.query.mos ? req.query.mos : null;
+  const mosQuery = req.query.mos ? req.query.mos.trim() : null;
 
   if (!nameQuery && !mosQuery) {
     return res.status(404).json({ message: "Nothing found" });
