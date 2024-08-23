@@ -8,7 +8,9 @@ const resetButton = document.getElementById("resetButton");
 async function handleSearch(event) {
   event.preventDefault();
   const query = document.getElementById("searchBox").value;
-  const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
+  const response = await fetch(
+    `http://localhost:3000/search?name=${encodeURIComponent(query)}`
+  );
   const filteredData = await response.json();
 
   // console.log("filteredData", filteredData);
@@ -64,7 +66,9 @@ async function handleSearch(event) {
       searchButton.textContent = "";
 
       proceedLink.href = "./apply-for-leave.html#apply-form";
+      proceedLink.target = "_blank";
       proceedLink.textContent = "Proceed to Apply";
+      searchButton.removeEventListener("click", handleSearch);
 
       searchBtnContainer.style.display = "flex";
       searchBtnContainer.style.justifyContent = "center";
