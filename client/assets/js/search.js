@@ -38,7 +38,7 @@ async function handleSearch() {
 
       // Append the div to the container
       container.appendChild(div);
-      proceedLink.textContent = "";
+      searchButton.textContent = "";
       const proceedLink = document.createElement("a");
       proceedLink.href = "./apply-for-leave.html#apply-form";
       proceedLink.textContent = "Proceed to Apply";
