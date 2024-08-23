@@ -1,7 +1,10 @@
 const searchButton = document.getElementById("searchButton");
+
 async function handleSearch() {
   const query = document.getElementById("searchBox").value;
-  const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
+  const response = await fetch(
+    `http://localhost:3000/search?name=${encodeURIComponent(query)}`
+  );
   const filteredData = await response.json();
 
   // console.log("filteredData", filteredData);
@@ -39,17 +42,24 @@ async function handleSearch() {
       // Add a CSS class to the <ul> element
       ul.classList.add("dynamic-list");
 
-      Object.values((item.details = {})).forEach((value) => {
-        const li = document.createElement("li");
-        li.textContent = value;
-        ul.appendChild(li);
-      });
+      // Object.entries((item.details = {})).forEach(([key, value]) => {
+      //   const li = document.createElement("li");
+      //   li.textContent = `${value}`;
+      //   ul.appendChild(li);
+      //   console.log(`Value: ${value}`);
+      // });
+
+      ul.innerHTML = `
+      <li>Eye Color: <b>${item.details.eyeColor}</b></li>
+      <li>Hair Color: <b> ${item.details.hairColor}</b></li>
+      <li>Height: <b>${item.details.height}</b></li>
+      `;
 
       // Append the image and text to the div
       div.appendChild(img);
-      div.appendChild(ul);
       div.appendChild(textName);
       div.appendChild(textAbout);
+      div.appendChild(ul);
 
       // Append the div to the container
       container.appendChild(div);

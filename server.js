@@ -1,8 +1,14 @@
+require("dotenv").config();
 const express = require("express");
+const morgan = require("morgan");
 const cors = require("cors");
 const path = require("path");
 const app = express();
 const PORT = 3000;
+
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 var corsOptions = {
   origin: ["http://localhost:3000", "http://localhost:5173"],
@@ -49,7 +55,6 @@ const data = [
     imageUrl: "/images/timothy-anderson.jpg",
     details: { height: "5ft. 7in", eyeColor: "brown", hairColor: "black" },
   },
-  // { id: 3, name: "Mike Johnson", job: "Manager" },
 ];
 
 // Serve static files from the 'client' directory
@@ -60,35 +65,22 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "search.html"));
 });
 
-// // Handle search requests
-// app.get("/search", cors(corsOptions), (req, res) => {
-//   const query = req.query.name.toLowerCase()
-//   if (!query || query === "") {
-//     return res.status(404).json({ message: "Nothing found" });
-//   }
-//   const filteredData = data.filter((item) =>
-//     item.name.toLowerCase().includes(query)
-//   );
-//   res.json(filteredData);
-// });
-
 // Handle search requests
 app.get("/search", cors(corsOptions), (req, res) => {
-  const nameQuery = req.query.name ? req.query.name.toLowerCase() : null;
-  const mosQuery = req.query.mos ? req.query.mos.trim() : null;
+  // const nameQuery = req.query.name ? req.query.name.toLowerCase() : null;
+  const mosQuery = req.query.name ? req.query.name : null;
 
-  if (!nameQuery && !mosQuery) {
+  if (!mosQuery) {
     return res.status(404).json({ message: "Nothing found" });
   }
 
   const filteredData = data.filter((item) => {
-    const nameMatches = nameQuery
-      ? item.name.toLowerCase().includes(nameQuery)
-      : true;
-    const mosMatches = mosQuery
-      ? item.mos.toLowerCase().includes(mosQuery)
-      : true;
-    return nameMatches && mosMatches;
+    // const nameMatches = nameQuery
+    //   ? item.name.toLowerCase().includes(nameQuery)
+    //   : true;
+    const mosMatches = mosQuery ? item.mos.includes(mosQuery) : true;
+    console.log("mosMatches", mosMatches);
+    return mosMatches;
   });
 
   res.json(filteredData);
