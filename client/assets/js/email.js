@@ -1,5 +1,6 @@
 function sendMail(event) {
   event.preventDefault();
+
   let parms = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
@@ -10,7 +11,7 @@ function sendMail(event) {
   };
 
   emailjs.send("service_7mctdci", "template_hq23dy2", parms).then(() => {
-    alert("Message Sent");
+    alert("Message Sent! We will contact you soon.");
     document.getElementById("contactForm").reset();
   });
 }
@@ -25,7 +26,7 @@ function sendContact(event) {
   };
 
   emailjs.send("service_7mctdci", "template_hrz6vyf", parms).then(() => {
-    alert("Message Sent");
+    alert("Message Sent! We will contact you soon.");
     document.getElementById("contactForm").reset();
   });
 }
