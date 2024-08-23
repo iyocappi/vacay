@@ -8,9 +8,7 @@ const resetButton = document.getElementById("resetButton");
 async function handleSearch(event) {
   event.preventDefault();
   const query = document.getElementById("searchBox").value;
-  const response = await fetch(
-    `http://localhost:3000/search?name=${encodeURIComponent(query)}`
-  );
+  const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
   const filteredData = await response.json();
 
   // console.log("filteredData", filteredData);
