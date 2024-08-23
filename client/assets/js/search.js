@@ -27,16 +27,15 @@ async function handleSearch(event) {
       const img = document.createElement("img");
       img.src = item.imageUrl; // Assuming your API provides an imageUrl
       img.alt = `${item.name}`;
-      img.classList.add("result-image"); // Optional: Add a class for styling
+      img.classList.add("result-image");
 
       // Create a text element
       const textName = document.createElement("h2");
+      textName.classList.add("result-text-name");
       textName.textContent = `${item.name}`;
-      textName.classList.add("result-text-name"); // Optional: Add a class for styling
 
       const textAbout = document.createElement("p");
       textAbout.textContent = `${item.about}`;
-      textName.classList.add("result-text-about");
 
       // Array of items to add to the list
 

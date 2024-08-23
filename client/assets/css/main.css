@@ -4238,16 +4238,10 @@ body.is-menu-visible #menu .inner {
 /* Text styling */
 .result-text-name {
   font-size: 20px;
-  color: #000;
+  color: #e1d798;
   margin: 0;
-  line-height: 1.5;
-  text-transform: capitalize;
-}
-.result-text-about {
-  font-size: 16px;
-  color: #333333 !important;
-  margin: 0;
-  line-height: 1.5;
+  line-height: 2.5;
+  text-transform: uppercase;
 }
 
 /* Hover effect for the result item */

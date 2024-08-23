@@ -45,8 +45,8 @@ const data = [
     details: {
       height: "5ft. 10in",
       age: 38,
-      eyeColor: "brown",
-      hairColor: "black",
+      eyeColor: "blue",
+      hairColor: "dirty blonde",
       rank: "Warrant Officer",
       dob: "10th April, 1986",
     },
