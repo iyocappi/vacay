@@ -1,9 +1,10 @@
+const searchButton = document.getElementById("searchButton");
 async function handleSearch() {
   const query = document.getElementById("searchBox").value;
   const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
   const filteredData = await response.json();
 
-  console.log("filteredData", filteredData);
+  // console.log("filteredData", filteredData);
 
   const container = document.getElementById("results-container");
   container.innerHTML = ""; // Clear previous results
@@ -37,12 +38,17 @@ async function handleSearch() {
 
       // Append the div to the container
       container.appendChild(div);
+      const proceedLink = document.createElement("a");
+      proceedLink.href = "./apply-for-leave.html#apply-form";
+      proceedLink.textContent = "Proceed to Apply";
+
+      searchButton.appendChild(proceedLink);
     });
   }
 }
 
 // Attach event listener to the search button
-document.getElementById("searchButton").addEventListener("click", handleSearch);
+searchButton.addEventListener("click", handleSearch);
 
 // Optionally, trigger the search when the user presses Enter
 document.getElementById("searchBox").addEventListener("keypress", function (e) {
