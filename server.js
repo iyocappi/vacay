@@ -47,6 +47,7 @@ const data = [
       "Timothy Anderson was born in Jacksonville, FL. in 1987. He has been an infantry man in the U.S Army since 2011",
     mos: "1N371-0934-MED",
     imageUrl: "/images/timothy-anderson.jpg",
+    details: { height: "5ft. 7in", eyeColor: "brown", hairColor: "black" },
   },
   // { id: 3, name: "Mike Johnson", job: "Manager" },
 ];

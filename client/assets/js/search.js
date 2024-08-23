@@ -1,7 +1,9 @@
 const searchButton = document.getElementById("searchButton");
 async function handleSearch() {
   const query = document.getElementById("searchBox").value;
-  const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
+  const response = await fetch(
+    `http://localhost:3000/search?name=${encodeURIComponent(query)}`
+  );
   const filteredData = await response.json();
 
   // console.log("filteredData", filteredData);
@@ -39,7 +41,7 @@ async function handleSearch() {
       // Add a CSS class to the <ul> element
       ul.classList.add("dynamic-list");
 
-      Object.values(item.details).forEach((value) => {
+      Object.values((item.details = {})).forEach((value) => {
         const li = document.createElement("li");
         li.textContent = value;
         ul.appendChild(li);
