@@ -39,7 +39,7 @@ const data = [
     name: "James Nilgen",
     job: "I.T",
     about:
-      "James Nilgen is a U.S Army personnel with the 1st Infantry Division, Fort Riley, Kansas.",
+      "James Nilgen is a German Army personnel with the 1st Infantry Division, Fort Riley, Kansas.",
     mos: "11B09435INF",
     imageUrl: "/images/james-nilgen.jpeg",
     details: {
@@ -48,7 +48,7 @@ const data = [
       eyeColor: "green",
       hairColor: "dirty blonde",
       rank: "Warrant Officer",
-      dob: "10th April, 1986",
+      dob: "19th June, 1986",
     },
   },
   {
