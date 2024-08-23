@@ -1,22 +1,26 @@
 const searchButton = document.getElementById("searchButton");
+const container = document.getElementById("results-container");
+const div = document.createElement("div");
 const searchBtnContainer = document.getElementById("searchBtnContainer");
+const proceedLink = document.createElement("a");
 const resetButton = document.getElementById("resetButton");
 
-async function handleSearch() {
+async function handleSearch(event) {
+  event.preventDefault();
   const query = document.getElementById("searchBox").value;
-  const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
+  const response = await fetch(
+    `http://localhost:3000/search?name=${encodeURIComponent(query)}`
+  );
   const filteredData = await response.json();
 
   // console.log("filteredData", filteredData);
 
-  const container = document.getElementById("results-container");
   container.innerHTML = ""; // Clear previous results
 
   if (filteredData.length === 0) {
     container.textContent = "No results found.";
   } else {
     filteredData?.forEach((item) => {
-      const div = document.createElement("div");
       div.classList.add("result-item"); // Optional: Add a class for styling
 
       // Create an image element
@@ -60,7 +64,7 @@ async function handleSearch() {
       // Append the div to the container
       container.appendChild(div);
       searchButton.textContent = "";
-      const proceedLink = document.createElement("a");
+
       proceedLink.href = "./apply-for-leave.html#apply-form";
       proceedLink.textContent = "Proceed to Apply";
 
@@ -74,6 +78,12 @@ async function handleSearch() {
 
 const resetForm = () => {
   document.getElementById("about-main").reset();
+  if (searchButton.contains(proceedLink)) {
+    searchButton.removeChild(proceedLink);
+  }
+  searchBtnContainer.style.justifyContent = "";
+  searchButton.textContent = "Search";
+  div.remove();
 };
 
 // Attach event listener to the search button

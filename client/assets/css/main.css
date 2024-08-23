@@ -4299,3 +4299,9 @@ body.is-menu-visible #menu .inner {
   align-items: center;
   cursor: pointer;
 }
+#resetButton:active {
+  transform: scale(0.9); /* Scale down to 90% of the original size */
+}
+#resetButton:hover {
+  background: "red";
+}
