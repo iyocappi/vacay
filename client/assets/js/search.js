@@ -1,5 +1,6 @@
 const searchButton = document.getElementById("searchButton");
 const searchBtnContainer = document.getElementById("searchBtnContainer");
+const resetButton = document.getElementById("resetButton");
 
 async function handleSearch() {
   const query = document.getElementById("searchBox").value;
@@ -70,6 +71,10 @@ async function handleSearch() {
     });
   }
 }
+
+const resetForm = () => {
+  document.getElementById("about-main").reset();
+};
 
 // Attach event listener to the search button
 searchButton.addEventListener("click", handleSearch);

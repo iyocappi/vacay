@@ -102,7 +102,7 @@
 
       <!-- Main -->
       <div id="search-section">
-        <div id="about-main" class="search-container">
+        <form id="about-main" class="search-container">
           <h3 style="text-align: center">
             Search Our database Using Soldier&apos;s Name or MOS code
           </h3>
@@ -115,8 +115,11 @@
           <div id="results-container"></div>
           <div id="searchBtnContainer">
             <button id="searchButton">Search</button>
+            <div id="resetButton" onclick="resetForm()">
+              <img src="./assets/reset.svg" alt="" width="50px" height="50px" />
+            </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <!-- Footer -->

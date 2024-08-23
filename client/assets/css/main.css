@@ -4291,3 +4291,11 @@ body.is-menu-visible #menu .inner {
     transform: rotate(360deg);
   }
 }
+
+/* search btn */
+#searchBtnContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}

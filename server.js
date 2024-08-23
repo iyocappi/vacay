@@ -41,7 +41,7 @@ const data = [
     about:
       "James Nilgen is a U.S Army personnel with the 1st Infantry Division, Fort Riley, Kansas.",
     mos: "11B-0935-INF",
-    imageUrl: "/images/james-nilgen.jpg",
+    imageUrl: "/images/james-nilgen.jpeg",
     details: {
       height: "5ft. 10in",
       age: 38,
