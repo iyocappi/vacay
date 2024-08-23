@@ -36,6 +36,23 @@ app.use("/images", express.static(path.join(__dirname, "client/images")));
 const data = [
   {
     id: 1,
+    name: "James Nilgen",
+    job: "I.T",
+    about:
+      "James Nilgen is a U.S Army personnel with the 1st Infantry Division, Fort Riley, Kansas.",
+    mos: "11B-0935-INF",
+    imageUrl: "/images/james-nilgen.jpg",
+    details: {
+      height: "5ft. 10in",
+      age: 38,
+      eyeColor: "brown",
+      hairColor: "black",
+      rank: "Warrant Officer",
+      dob: "10th April, 1986",
+    },
+  },
+  {
+    id: 2,
     name: "COL. Cory Moore",
     job: "I.T",
     about:
@@ -43,17 +60,31 @@ const data = [
 
     mos: "11B-0934-INF",
     imageUrl: "/images/cory-moore.jpg",
-    details: { height: "5ft. 7in", eyeColor: "brown", hairColor: "black" },
+    details: {
+      height: "5ft. 7in",
+      age: 48,
+      eyeColor: "brown",
+      hairColor: "black",
+      rank: "Warrant Officer",
+      dob: "1st November, 1976",
+    },
   },
   {
-    id: 2,
+    id: 3,
     name: "Timothy Anderson",
     job: "Infantry",
     about:
       "Timothy Anderson was born in Jacksonville, FL. in 1987. He has been an infantry man in the U.S Army since 2011",
     mos: "1N371-0934-MED",
     imageUrl: "/images/timothy-anderson.jpg",
-    details: { height: "5ft. 7in", eyeColor: "brown", hairColor: "black" },
+    details: {
+      height: "5ft. 7in",
+      age: 28,
+      eyeColor: "brown",
+      hairColor: "black",
+      rank: "Warrant Officer",
+      dob: "10th June, 1996",
+    },
   },
 ];
 

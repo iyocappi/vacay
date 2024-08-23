@@ -4208,7 +4208,7 @@ body.is-menu-visible #menu .inner {
 /* Container for the results */
 #results-container {
   align-self: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Individual result item */

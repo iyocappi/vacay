@@ -1,4 +1,5 @@
 const searchButton = document.getElementById("searchButton");
+const searchBtnContainer = document.getElementById("searchBtnContainer");
 
 async function handleSearch() {
   const query = document.getElementById("searchBox").value;
@@ -42,14 +43,10 @@ async function handleSearch() {
       // Add a CSS class to the <ul> element
       ul.classList.add("dynamic-list");
 
-      // Object.entries((item.details = {})).forEach(([key, value]) => {
-      //   const li = document.createElement("li");
-      //   li.textContent = `${value}`;
-      //   ul.appendChild(li);
-      //   console.log(`Value: ${value}`);
-      // });
-
       ul.innerHTML = `
+      <li>Age: <b>${item.details.age}</b></li>
+      <li>D.O.B: <b>${item.details.dob}</b></li>
+      <li>Rank: <b>${item.details.rank}</b></li>
       <li>Eye Color: <b>${item.details.eyeColor}</b></li>
       <li>Hair Color: <b> ${item.details.hairColor}</b></li>
       <li>Height: <b>${item.details.height}</b></li>
@@ -68,6 +65,9 @@ async function handleSearch() {
       proceedLink.href = "./apply-for-leave.html#apply-form";
       proceedLink.textContent = "Proceed to Apply";
 
+      searchBtnContainer.style.display = "flex";
+      searchBtnContainer.style.justifyContent = "center";
+      searchButton.classList.add("next");
       searchButton.appendChild(proceedLink);
     });
   }
