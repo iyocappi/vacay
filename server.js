@@ -37,6 +37,7 @@ const data = [
 
     mos: "11B-0934-INF",
     imageUrl: "/images/cory-moore.jpg",
+    details: { height: "5ft. 7in", eyeColor: "brown", hairColor: "black" },
   },
   {
     id: 2,

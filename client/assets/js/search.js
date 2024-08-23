@@ -31,8 +31,23 @@ async function handleSearch() {
       textAbout.textContent = `${item.about}`;
       textName.classList.add("result-text-about");
 
+      // Array of items to add to the list
+
+      // Create the <ul> element
+      const ul = document.createElement("ul");
+
+      // Add a CSS class to the <ul> element
+      ul.classList.add("dynamic-list");
+
+      Object.values(item.details).forEach((value) => {
+        const li = document.createElement("li");
+        li.textContent = value;
+        ul.appendChild(li);
+      });
+
       // Append the image and text to the div
       div.appendChild(img);
+      div.appendChild(ul);
       div.appendChild(textName);
       div.appendChild(textAbout);
 

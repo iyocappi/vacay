@@ -4259,3 +4259,17 @@ body.is-menu-visible #menu .inner {
 #start {
   background-color: rgba(212, 212, 255, 0.035);
 }
+
+/* search details ul */
+.dynamic-list {
+  list-style-type: none; /* Removes the default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.dynamic-list li {
+  background-color: transparent;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
