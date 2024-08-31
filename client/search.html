@@ -114,7 +114,7 @@
           />
           <div id="results-container"></div>
           <div id="searchBtnContainer">
-            <div id="resetButton" onclick="resetForm()">
+            <div id="resetButton">
               <img src="./assets/reset.svg" alt="" width="50px" height="50px" />
             </div>
             <button id="searchButton">Search</button>
@@ -147,6 +147,7 @@
     </div>
 
     <div class="gtranslate_wrapper"></div>
+    <!-- Scripts -->
     <script>
       window.gtranslateSettings = {
         default_language: "en",
@@ -159,7 +160,8 @@
       defer
     ></script>
 
-    <!-- Scripts -->
+    <div id="results"></div>
+
     <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/jquery.scrolly.min.js"></script>
     <script src="./assets/js/jquery.scrollex.min.js"></script>
@@ -169,7 +171,7 @@
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/carousel.js" type="module"></script>
     <script src="./assets/js/nav.js"></script>
-    <script src="./assets/js/search.js"></script>
+    <script src="./assets/js/search.js" type="module"></script>
     <script>
       const currentYear = new Date().getFullYear();
 

@@ -4,46 +4,14 @@ const div = document.createElement("div");
 const searchBtnContainer = document.getElementById("searchBtnContainer");
 const proceedLink = document.createElement("a");
 const resetButton = document.getElementById("resetButton");
-import { createClient } from "https://esm.sh/@sanity/client";
-
-const client = createClient({
-  projectId: "zyxj6mrs",
-  dataset: "production",
-  useCdn: true, // set to `false` to bypass the edge cache
-  apiVersion: "2023-05-03", // use current date (YYYY-MM-DD) to target the latest API version
-});
-
-const data = await client.fetch(`count(*)`);
-// document.getElementById("results").innerText = `Number of documents: ${data}`;
-console.log(`Number of documents: ${data}`);
 
 async function handleSearch(event) {
   event.preventDefault();
-  // const query = document.getElementById("searchBox").value;
-  // const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
-  // const filteredData = await response.json();
+  const query = document.getElementById("searchBox").value;
+  const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
+  const filteredData = await response.json();
 
-  // // console.log("filteredData", filteredData);
-
-  const mosQuery = document.getElementById("searchBox").value.trim();
-
-  if (!mosQuery) {
-    alert("Please enter a search term.");
-    return;
-  }
-
-  // GROQ query to filter results by the 'mos' field
-  const sanityQuery = `*[_type == "profile" && details.mos match $mos]{
-    name,
-    about,
-    "imageUrl": image.asset->url,
-    details
-  }`;
-
-  const filteredData = await client.fetch(sanityQuery, {
-    mos: `${mosQuery}*`,
-  });
-  console.log("filteredData", filteredData);
+  // console.log("filteredData", filteredData);
 
   container.innerHTML = ""; // Clear previous results
 
@@ -119,9 +87,6 @@ const resetForm = () => {
 
 // Attach event listener to the search button
 searchButton.addEventListener("click", handleSearch);
-
-// Attach event listener to the search button
-resetButton.addEventListener("click", resetForm);
 
 // Optionally, trigger the search when the user presses Enter
 document.getElementById("searchBox").addEventListener("keypress", function (e) {
