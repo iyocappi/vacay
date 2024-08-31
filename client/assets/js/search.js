@@ -13,21 +13,16 @@ const client = createClient({
   apiVersion: "2023-05-03", // use current date (YYYY-MM-DD) to target the latest API version
 });
 
-const data = await client.fetch(`count(*)`);
-// document.getElementById("results").innerText = `Number of documents: ${data}`;
-console.log(`Number of documents: ${data}`);
+// const data = await client.fetch(`count(*)`);
+
+// console.log(`Number of documents: ${data}`);
 
 async function handleSearch(event) {
   event.preventDefault();
-  // const query = document.getElementById("searchBox").value;
-  // const response = await fetch(`/search?name=${encodeURIComponent(query)}`);
-  // const filteredData = await response.json();
 
-  // // console.log("filteredData", filteredData);
+  const mosQueryValue = document.getElementById("searchBox").value.trim();
 
-  const mosQuery = document.getElementById("searchBox").value.trim();
-
-  if (!mosQuery) {
+  if (!mosQueryValue) {
     alert("Please enter a search term.");
     return;
   }
@@ -41,69 +36,73 @@ async function handleSearch(event) {
   }`;
 
   const filteredData = await client.fetch(sanityQuery, {
-    mos: `${mosQuery}*`,
+    mos: `${mosQueryValue}*`,
   });
-  console.log("filteredData", filteredData);
+  // console.log("filteredData", filteredData);
 
   container.innerHTML = ""; // Clear previous results
 
-  if (filteredData.length === 0) {
-    container.textContent = "No results found.";
-  } else {
-    filteredData?.forEach((item) => {
-      div.classList.add("result-item"); // Optional: Add a class for styling
+  try {
+    if (filteredData.length === 0) {
+      container.textContent = "No results found.";
+    } else {
+      filteredData?.forEach((item) => {
+        div.classList.add("result-item"); // Optional: Add a class for styling
 
-      // Create an image element
-      const img = document.createElement("img");
-      img.src = item.imageUrl; // Assuming your API provides an imageUrl
-      img.alt = `${item.name}`;
-      img.classList.add("result-image");
+        // Create an image element
+        const img = document.createElement("img");
+        img.src = item.imageUrl; // Assuming your API provides an imageUrl
+        img.alt = `${item.name}`;
+        img.classList.add("result-image");
 
-      // Create a text element
-      const textName = document.createElement("h2");
-      textName.classList.add("result-text-name");
-      textName.textContent = `${item.name}`;
+        // Create a text element
+        const textName = document.createElement("h2");
+        textName.classList.add("result-text-name");
+        textName.textContent = `${item.name}`;
 
-      const textAbout = document.createElement("p");
-      textAbout.textContent = `${item.about}`;
+        const textAbout = document.createElement("p");
+        textAbout.textContent = `${item.about}`;
 
-      // Array of items to add to the list
+        // Array of items to add to the list
 
-      // Create the <ul> element
-      const ul = document.createElement("ul");
+        // Create the <ul> element
+        const ul = document.createElement("ul");
 
-      // Add a CSS class to the <ul> element
-      ul.classList.add("dynamic-list");
+        // Add a CSS class to the <ul> element
+        ul.classList.add("dynamic-list");
 
-      ul.innerHTML = `
-      <li>Age: <b>${item.details.age}</b></li>
-      <li>D.O.B: <b>${item.details.dob}</b></li>
-      <li>Rank: <b>${item.details.rank}</b></li>
-      <li>Eye Color: <b>${item.details.eyeColor}</b></li>
-      <li>Hair Color: <b> ${item.details.hairColor}</b></li>
-      <li>Height: <b>${item.details.height}</b></li>
-      `;
+        ul.innerHTML = `
+        <li>Age: <b>${item.details.age}</b></li>
+        <li>D.O.B: <b>${item.details.dob}</b></li>
+        <li>Rank: <b>${item.details.rank}</b></li>
+        <li>Eye Color: <b>${item.details.eyeColor}</b></li>
+        <li>Hair Color: <b> ${item.details.hairColor}</b></li>
+        <li>Height: <b>${item.details.height}</b></li>
+        `;
 
-      // Append the image and text to the div
-      div.appendChild(img);
-      div.appendChild(textName);
-      div.appendChild(textAbout);
-      div.appendChild(ul);
+        // Append the image and text to the div
+        div.appendChild(img);
+        div.appendChild(textName);
+        div.appendChild(textAbout);
+        div.appendChild(ul);
 
-      // Append the div to the container
-      container.appendChild(div);
-      searchButton.textContent = "";
+        // Append the div to the container
+        container.appendChild(div);
+        searchButton.textContent = "";
 
-      proceedLink.href = "./apply-for-leave.html#apply-form";
-      proceedLink.target = "_blank";
-      proceedLink.textContent = "Proceed to Apply";
-      searchButton.removeEventListener("click", handleSearch);
+        proceedLink.href = "./apply-for-leave.html#apply-form";
+        proceedLink.target = "_blank";
+        proceedLink.textContent = "Proceed to Apply";
+        searchButton.removeEventListener("click", handleSearch);
 
-      searchBtnContainer.style.display = "flex";
-      searchBtnContainer.style.justifyContent = "center";
-      searchButton.classList.add("next");
-      searchButton.appendChild(proceedLink);
-    });
+        searchBtnContainer.style.display = "flex";
+        searchBtnContainer.style.justifyContent = "center";
+        searchButton.classList.add("next");
+        searchButton.appendChild(proceedLink);
+      });
+    }
+  } catch (err) {
+    console.log(err);
   }
 }
 
