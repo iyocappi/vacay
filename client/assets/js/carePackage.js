@@ -19,7 +19,7 @@ async function fetchData() {
 
   try {
     const data = await client.fetch(query);
-    console.log("latest-query", query);
+    // console.log("latest-query", query);
     return data;
   } catch (err) {
     console.error("Failed to fetch data:", err);
