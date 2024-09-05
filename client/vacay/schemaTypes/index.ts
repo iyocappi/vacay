@@ -1,2 +1,3 @@
 import profile from './profile'
-export const schemaTypes = [profile]
+import carePackage from './carePackage'
+export const schemaTypes = [profile, carePackage]
